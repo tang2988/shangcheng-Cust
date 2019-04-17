@@ -1,15 +1,15 @@
-CREATE TABLE t_account (
-  accountId bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID(业务标识101+10位自增数)',
-  myAvailableBalance decimal(2,0) not null COMMENT '我的可用余额',
-	allTheBalance decimal(2,0) not null COMMENT '全部余额',
-	lockTheBalance decimal(2,0)not null COMMENT '锁定余额',
-	accountStatus int(2) default null comment '账户状态',
-  remark varchar(1000) DEFAULT NULL COMMENT '备注',
-  versionNo int(11) DEFAULT '1' COMMENT '版本号',
-  createTime timestamp NULL DEFAULT NULL COMMENT '插入时间',
-	customerId bigint not null COMMENT '客户ID',
-  PRIMARY KEY (accountId)
-) ENGINE=InnoDB AUTO_INCREMENT=1010000000048 DEFAULT CHARSET=utf8 COMMENT='账户表';
+CREATE TABLE `t_account` (
+  `accountId` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID(业务标识101+10位自增数)',
+  `myAvailableBalance` decimal(2,0) NOT NULL COMMENT '我的可用余额',
+  `allTheBalance` decimal(2,0) NOT NULL COMMENT '全部余额',
+  `lockTheBalance` decimal(2,0) default '0' COMMENT '锁定余额',
+  `accountStatus` int(2) DEFAULT '10' COMMENT '账户状态 10正常 20禁用',
+  `remark` varchar(1000) DEFAULT NULL COMMENT '备注',
+  `versionNo` int(11) DEFAULT '1' COMMENT '版本号',
+  `createTime` timestamp NULL DEFAULT NULL COMMENT '插入时间',
+  `customerId` bigint(20) NOT NULL COMMENT '客户ID',
+  PRIMARY KEY (`accountId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='账户表';
 
 create table t_accountOfTheWater(
 	accountFlowId bigint(20) not null AUTO_INCREMENT COMMENT 'ID(业务标识201+10位自增数)',
@@ -22,3 +22,17 @@ create table t_accountOfTheWater(
 	createtime timestamp null default null comment '插入时间',
 	primary key(accountFlowId)
 )engine=innodb AUTO_INCREMENT=2010000000048 DEFAULT charset=utf8 comment='账户流水表';
+
+CREATE TABLE `t_customer` (
+  `customerId` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '客户Id(业务标识101+10自增长)',
+  `customerUser` varchar(15) DEFAULT NULL COMMENT '用户昵称',
+  `mobilePhone` varchar(15) NOT NULL COMMENT '用户手机号码 登陆账户',
+  `loginPassword` varchar(20) NOT NULL COMMENT '用户登陆密码',
+  `gender` int(2) DEFAULT NULL COMMENT '性别 男10 女20',
+  `registerTime` datetime DEFAULT NULL COMMENT '注册时间',
+  `remark` varchar(20) DEFAULT NULL COMMENT '备注',
+  `versionNo` int(11) DEFAULT '1' COMMENT '版本号',
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`customerId`),
+  UNIQUE KEY `idx_mobilePhone` (`mobilePhone`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='客户信息';

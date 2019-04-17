@@ -3,12 +3,26 @@ package com.shangcheng.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.springframework.core.style.ToStringCreator;
+
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+
+import lombok.Data;
+
 /**
  * 账户表
  * @author 谢雄辉
  */
+@Data
 public class Account {
 	
+	@Override
+	public String toString() {
+		return "Account [accountId=" + accountId + ", myAvailableBalance=" + myAvailableBalance + ", allTheBalance="
+				+ allTheBalance + ", lockTheBalance=" + lockTheBalance + ", accountStatus=" + accountStatus
+				+ ", remark=" + remark + ", versionNo=" + versionNo + ", createTime=" + createTime + ", customerId="
+				+ customerId + "]";
+	}
 	/**
 	 * 账户ID
 	 */
@@ -47,7 +61,7 @@ public class Account {
 	private Long customerId;
 	public Account() {
 	}
-	public Long getAccountId() {
+public Long getAccountId() {
 		return accountId;
 	}
 	public void setAccountId(Long accountId) {

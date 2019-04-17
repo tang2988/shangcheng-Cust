@@ -1,0 +1,24 @@
+CREATE TABLE t_account (
+  accountId bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID(业务标识101+10位自增数)',
+  myAvailableBalance decimal(2,0) not null COMMENT '我的可用余额',
+	allTheBalance decimal(2,0) not null COMMENT '全部余额',
+	lockTheBalance decimal(2,0)not null COMMENT '锁定余额',
+	accountStatus int(2) default null comment '账户状态',
+  remark varchar(1000) DEFAULT NULL COMMENT '备注',
+  versionNo int(11) DEFAULT '1' COMMENT '版本号',
+  createTime timestamp NULL DEFAULT NULL COMMENT '插入时间',
+	customerId bigint not null COMMENT '客户ID',
+  PRIMARY KEY (accountId)
+) ENGINE=InnoDB AUTO_INCREMENT=1010000000048 DEFAULT CHARSET=utf8 COMMENT='账户表';
+
+create table t_accountOfTheWater(
+	accountFlowId bigint(20) not null AUTO_INCREMENT COMMENT 'ID(业务标识201+10位自增数)',
+	customerId bigint not null COMMENT '客户ID',
+	runningTime Date not null comment '时间',
+	theAmountOf decimal not null comment '金额',
+	operaTion varchar(20) not null comment '操作',
+	remark varchar(200) not null comment '备注',
+	versionNo int(11) default '1' comment '版本号',
+	createtime timestamp null default null comment '插入时间',
+	primary key(accountFlowId)
+)engine=innodb AUTO_INCREMENT=2010000000048 DEFAULT charset=utf8 comment='账户流水表';

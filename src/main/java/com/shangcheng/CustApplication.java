@@ -1,8 +1,5 @@
 package com.shangcheng;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -11,7 +8,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.shangcheng.Serviceimpl.CustomerServiceImpl;
-import com.shangcheng.entity.Account;
 import com.shangcheng.entity.Customer;
 import com.shangcheng.mapper.AccountMapper;
 import com.shangcheng.mapper.CustomerMapper;

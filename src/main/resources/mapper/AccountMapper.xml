@@ -3,15 +3,28 @@
 <mapper namespace="com.shangcheng.mapper.AccountMapper">
 
 
-	<select id="getAccountList" resultType="com.shangcheng.entity.Account">
-
+	<select id="getAccountList"
+		resultType="com.shangcheng.entity.Account">
 		select * from t_account
 
 	</select>
 
-	<select id="getAccountById" resultType="com.shangcheng.entity.Account">
+
+
+	<select id="getAccountById"
+		resultType="com.shangcheng.entity.Account">
 		select * from t_account where accountId = #{AccountId}
 
 
 	</select>
+
+	<insert id="addAccount"
+		parameterType="com.shangcheng.entity.Account">
+		INSERT INTO
+		t_account(myAvailableBalance,allTheBalance,lockTheBalance,accountStatus,remark,versionNo,createTime,customerId)
+		VALUES
+		(#{myAvailableBalance},#{allTheBalance},#{lockTheBalance},#{accountStatus},#{remark},#{versionNo},#{createTime},#{customerId});
+
+	</insert>
+
 </mapper>

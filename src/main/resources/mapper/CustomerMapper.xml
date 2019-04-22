@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shangcheng.mapper.CustomerMapper">
+
+
+	<select id="findAll" resultType="com.shangcheng.entity.Customer">
+		select customerId,customerUser,mobilePhone,loginPassword,gender,registerTime,remark,versionNo,createTime from t_customer
+		
+	</select>
+
+
+	<select id="getCustomerById"
+		resultType="com.shangcheng.entity.Customer">
+
+		select * from t_customer where customerId = #{CustomerId}
+
+
+	</select>
+
+	<select id="Login" resultType="com.shangcheng.entity.Customer">
+		select * from t_customer where
+		mobilePhone=#{mobilePhone} and loginPassword=#{loginPassword}
+
+	</select>
+
+	<insert id="AddCustomer"
+		parameterType="com.shangcheng.entity.Customer" useGeneratedKeys="true" keyProperty="customerId">
+		
+		insert into t_customer
+		(customerUser,mobilePhone,loginPassword,gender,
+		registerTime,remark,createTime,versionNo)
+		VALUES(#{customerUser},#{mobilePhone},#{loginPassword},#{gender},#{registerTime},#{remark},#{createTime},#{versionNo})
+
+	</insert>
+	
+	<select id="getCustomerByMobilePhone" resultType="com.shangcheng.entity.Customer">
+		select * from t_customer where mobilePhone = #{mobilePhone}
+		
+	</select>
+</mapper>

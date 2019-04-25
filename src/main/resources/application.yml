@@ -15,7 +15,7 @@ spring:
       suffix: .jsp
    
   resources:
-    static-locations: classpath:/WEB-INF/images,classpath:/WEB-INF/css,classpath:/WEB-INF/js    
+    static-locations: classpath:/WEB-INF/images,classpath:/WEB-INF/css,classpath:/WEB-INF/js,/WEB-INF/resource,/WEB-INF/webp,/WEB-INF/html    
    
 server:
   port: 1999

@@ -1,196 +1,128 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
-    <title>注册-个人用户</title>
-    <link type="text/css" rel="stylesheet" href="/css/regist.personal.css"/>
-    <link type="text/css" rel="stylesheet" href="/css/passport.base.css"/>
-    <script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
-</head>
-<body>
-<div class="w" id="logo">
-    <div>
-    	<a href="http://localhost:8082">
-    		<img src="/images/taotao-logo.gif" alt="淘淘商城" width="170" height="60"/>
-    	</a> <b></b>
-    </div>
-</div>
+<!DOCTYPE html>
+<!-- saved from url=(0098)http://www.17sucai.com/preview/66735/2018-04-23/%E6%9E%81%E5%AE%A2%E5%95%86%E5%9F%8E/register.html -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>极客商城-用户注册</title>
+    <link rel="stylesheet" href="/base.css">
+    <link rel="stylesheet" href="/register.css">
 
-<div class="w" id="regist">
-    <div class="mt">
-        <ul class="tab">
-            <li class="curr">个人用户</li>
-        </ul>
-        <div class="extra">
-        <span>我已经注册，现在就&nbsp;
-        	<a href="/user/showLogin" class="flk13">登录</a>
-        </span>
+</head>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+<body>
+    <div id="main">
+        <div id="header">
+        </div>
+        <div class="container">
+            <div class="bgPic"><img src="/b2_1.jpg" alt=""></div>
+            <div class="register">
+                <div class="title">
+                    <span>注册</span>
+                    <a href="http://www.17sucai.com/preview/66735/2018-04-23/%E6%9E%81%E5%AE%A2%E5%95%86%E5%9F%8E/demo.html">去登录</a>
+                </div>
+                <form  id="signupForm">
+                    
+                     <div class="default">
+                        <p>请输入中国大陆手机号码</p>
+                        <input id="phone" name="phone"  type="text" placeholder="手机号码">
+                        
+                    </div>
+                    
+                    <div class="default">
+                        <p>密码由8~10个数字和英文字符组成</p>
+                        <input id="password" name="password"  type="password" placeholder="密码">
+                        
+                    </div>
+                   
+                   
+                    <div class="submit">
+                        <span class="notice">点击"注册"代表您同意遵守
+                            <a href="http://www.17sucai.com/preview/66735/2018-04-23/%E6%9E%81%E5%AE%A2%E5%95%86%E5%9F%8E/register.html#">用户协议</a>
+                            和
+                            <a href="http://www.17sucai.com/preview/66735/2018-04-23/%E6%9E%81%E5%AE%A2%E5%95%86%E5%9F%8E/register.html#">隐私条款</a>
+                        </span>
+                        <button class="s_hover" data-form="submit">注册</button>
+                    </div>
+                </form>
+                <div class="other_login">
+                    <div class="log">
+                        <span>社交账号登录</span>
+                    </div>
+                    <div class="icon">
+                        <ul>
+                            <li data-log="icon" class="i_hover">
+                                <img data-icon="wx" src="/wx.png" alt="">
+                                <span class="prompt">微信登录</span>
+                            </li>
+                            <li data-log="icon" class="i_hover">
+                                <img data-icon="qq" src="/qq.png" alt="">
+                                <span class="prompt">QQ登录</span>
+                            </li>
+                            <li data-log="icon" class="i_hover">
+                                <img data-icon="wb" src="/wb.png" alt="">
+                                <span class="prompt">微博登录</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
         </div>
     </div>
-    <div class="mc">
-        <form id="personRegForm" method="post" onsubmit="return false;">
-            <div class="form" onselectstart="return false;">
-                <div class="item" id="select-regName">
-                    <span class="label"><b class="ftx04">*</b>用户名：</span>
 
-                    <div class="fl item-ifo">
-                        <div class="o-intelligent-regName">
-                            <input type="text" id="regName" name="username" class="text" tabindex="1" autoComplete="off"
-                                   onpaste="return false;"
-                                   value=""
-                                   onfocus="if(this.value=='') this.value='';this.style.color='#333'"
-                                   onblur="if(this.value=='') {this.value='';this.style.color='#999999'}"/>
-                            <i class="i-name"></i>
-                            <ul id="intelligent-regName" class="hide"></ul>
-                            <label id="regName_succeed" class="blank"></label>
-                            <label id="regName_error" class="hide"></label>
-                        </div>
-                    </div>
-                </div>
-                <div id="o-password">
-                    <div class="item">
-                        <span class="label"><b class="ftx04">*</b>请设置密码：</span>
 
-                        <div class="fl item-ifo">
-                            <input type="password" id="pwd" name="password" class="text" tabindex="2"
-                                   style="ime-mode:disabled;"
-                                   onpaste="return  false" autocomplete="off"/>
-                            <i class="i-pass"></i>
-                            <label id="pwd_succeed" class="blank"></label>
-                            <label id="pwd_error"></label>
-                            <span class="clr"></span>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <span class="label"><b class="ftx04">*</b>请确认密码：</span>
-
-                        <div class="fl item-ifo">
-                            <input type="password" id="pwdRepeat" name="pwdRepeat" class="text" tabindex="3"
-                                   onpaste="return  false" autocomplete="off"/>
-                            <i class="i-pass"></i>
-                            <label id="pwdRepeat_succeed" class="blank"></label>
-                            <label id="pwdRepeat_error"></label>
-                        </div>
-                    </div>
-					<div class="item" id="dphone">
-						<span class="label"><b class="ftx04">*</b>验证手机：</span>
-
-						<div class="fl item-ifo">
-							<input type="text" id="phone" maxlength="11" name="phone"
-								class="text" tabindex="4"
-								autocomplete="off" /> <i class="i-phone"></i> <label
-								id="phone_succeed" class="blank"></label> <label
-								id="phone_error"></label>
-						</div>
-					</div>
-					</div>
-                <div class="item item-new">
-                    <span class="label">&nbsp;</span>
-
-                    <div class="fl item-ifo">
-                        <input type="checkbox" class="checkbox" checked="checked" id="readme"
-                               onclick="agreeonProtocol();">
-                        <label for="protocol">我已阅读并同意<a href="#" class="blue" id="protocol">《淘淘用户注册协议》</a></label>
-                        <span class="clr"></span>
-                        <label id="protocol_error" class="error hide">请接受服务条款</label>
-                    </div>
-                </div>
-                <div class="item">
-                    <span class="label">&nbsp;</span>
-                    <input type="button" class="btn-img btn-regist" id="registsubmit" value="立即注册" tabindex="8"
-                           clstag="regist|keycount|personalreg|07"
-                           onclick="REGISTER.reg();"/>
-                </div>
-            </div>
-            <div class="phone">
-                <img width="180" height="180" src="/images/phone-bg.jpg">
-            </div>
-            <span class="clr"></span>
-        </form>
-    </div>
-<script type="text/javascript">
-	var REGISTER={
-		param:{
-			//单点登录系统的url
-			surl:""
-		},
-		inputcheck:function(){
-				//不能为空检查
-				if ($("#regName").val() == "") {
-					alert("用户名不能为空");
-					$("#regName").focus();
-					return false;
-				}
-				if ($("#pwd").val() == "") {
-					alert("密码不能为空");
-					$("#pwd").focus();
-					return false;
-				}
-				if ($("#phone").val() == "") {
-					alert("手机号不能为空");
-					$("#phone").focus();
-					return false;
-				}
-				//密码检查
-				if ($("#pwd").val() != $("#pwdRepeat").val()) {
-					alert("确认密码和密码不一致，请重新输入！");
-					$("#pwdRepeat").select();
-					$("#pwdRepeat").focus();
-					return false;
-				}
-				return true;
-		},
-		beforeSubmit:function() {
-				//检查用户是否已经被占用
-				$.ajax({
-	            	url : REGISTER.param.surl + "/user/check/"+escape($("#regName").val())+"/1?r=" + Math.random(),
-	            	success : function(data) {
-	            		if (data.data) {
-	            			//检查手机号是否存在
-	            			$.ajax({
-	            				url : REGISTER.param.surl + "/user/check/"+$("#phone").val()+"/2?r=" + Math.random(),
-				            	success : function(data) {
-				            		if (data.data) {
-					            		REGISTER.doSubmit();
-				            		} else {
-				            			alert("此手机号已经被注册！");
-				            			$("#phone").select();
-				            		}
-				            	}
-	            			});
-	            		} else {
-	            			alert("此用户名已经被占用，请选择其他用户名");
-	            			$("#regName").select();
-	            		}	
-	            	}
-				});
-	            	
-		},
-		doSubmit:function() {
-			$.post("/user/register",$("#personRegForm").serialize(), function(data){
-				if(data.status == 200){
-					alert('用户注册成功，请登录！');
-					REGISTER.login();
-				} else {
-					alert("注册失败！");
-				}
-			});
-		},
-		login:function() {
-			 location.href = "/user/showLogin";
-			 return false;
-		},
-		reg:function() {
-			if (this.inputcheck()) {
-				this.beforeSubmit();
-			}
-		}
-	};
-</script>
 </body>
 </html>
+<script>
+$().ready(function() {
+// 在键盘按下并释放及提交后验证提交表单
+  $("#signupForm").validate({
+    rules: {
+      
+      phone: {
+        required: true,
+        minlength: 11
+      },
+      password: {
+        required: true,
+        minlength: 8
+      },
+     
+      email: {
+        required: true,
+        email: true
+      },
+      topic: {
+        required: "#newsletter:checked",
+        minlength: 2
+      },
+      agree: "required"
+    },
+    messages: {
+    
+      phone: {
+        required: "请输入手机号码",
+        minlength: "用户名必需由11位数字组成"
+      },
+      password: {
+        required: "请输入密码",
+        minlength: "密码长度不能小于 8 个字母"
+      },
+      confirm_password: {
+        required: "请输入密码",
+        minlength: "密码长度不能小于 8 个字母",
+        equalTo: "两次密码输入不一致"
+      },
+      email: "请输入一个正确的邮箱",
+      agree: "请接受我们的声明",
+      topic: "请选择两个主题"
+     }
+    })
+});
+
+
+</script>

@@ -1,106 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-    <title>登录商城</title>
-    <link type="text/css" rel="stylesheet" href="/css/login.css"/>
-    <script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
+
+<!DOCTYPE html>
+<!-- saved from url=(0094)http://www.17sucai.com/preview/66735/2018-04-23/%E6%9E%81%E5%AE%A2%E5%95%86%E5%9F%8E/demo.html -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>商城-用户登录</title>
+    <link rel="stylesheet" href="/base.css">
+    <link rel="stylesheet" href="/login.css">
+
+
 </head>
 <body>
-<div class="w">
-    <div id="logo">
-    	<a href="http://localhost:8082" clstag="passport|keycount|login|01">
-    		<img src="/images/taotao-logo.gif" alt="淘淘" width="170" height="60"/>
-    	</a><b></b>
-   	</div>
-</div>
-<form id="formlogin" method="post" onsubmit="return false;">
-    <div class=" w1" id="entry">
-        <div class="mc " id="bgDiv">
-            <div id="entry-bg" clstag="passport|keycount|login|02" style="width: 511px; height: 455px; position: absolute; left: -44px; top: -44px; background: url(/images/544a11d3Na5a3d566.png) 0px 0px no-repeat;">
-			</div>
-            <div class="form ">
-                <div class="item fore1">
-                    <span>用户名</span>
-                    <div class="item-ifo">
-                        <input type="text" id="loginname" name="username" class="text"  tabindex="1" autocomplete="off"/>
-                        <div class="i-name ico"></div>
-                        <label id="loginname_succeed" class="blank invisible"></label>
-                        <label id="loginname_error" class="hide"><b></b></label>
-                    </div>
+<div id="main">
+    <div id="header">
+    </div>
+    <div class="container">
+        <div class="bgPic"><img src="/b3_1.jpg" alt=""></div>
+        <div class="register">
+            <div class="title">
+                <span>登录</span>
+                <a href="http://www.17sucai.com/preview/66735/2018-04-23/%E6%9E%81%E5%AE%A2%E5%95%86%E5%9F%8E/register.html">去注册</a>
+            </div>
+            <form autocomplete="on">
+                <div class="default">
+                    <p>请输入用户名或手机号码</p>
+                    <input id="uname" name="uname" data-form="uname" type="text" placeholder="用户名" >
+                   <!-- <label for="uname">用户名/手机</label>-->
                 </div>
-                <script type="text/javascript">
-                    setTimeout(function () {
-                        if (!$("#loginname").val()) {
-                            $("#loginname").get(0).focus();
-                        }
-                    }, 0);
-                </script>
-                <div id="capslock"><i></i><s></s>键盘大写锁定已打开，请注意大小写</div>
-                <div class="item fore2">
-                    <span>密码</span>
-                    <div class="item-ifo">
-                        <input type="password" id="nloginpwd" name="password" class="text" tabindex="2" autocomplete="off"/>
-                        <div class="i-pass ico"></div>
-                        <label id="loginpwd_succeed" class="blank invisible"></label>
-                        <label id="loginpwd_error" class="hide"></label>
-                    </div>
+                <div class="default">
+                    <p>请输入账号密码</p>
+                    <input id="upwd" name="upwd" data-form="upwd" type="password" placeholder="密码">
+                    <!-- <label for="upwd">密码</label>-->
                 </div>
-                <div class="item login-btn2013">
-                    <input type="button" class="btn-img btn-entry" id="loginsubmit" value="登录" tabindex="8" clstag="passport|keycount|login|06"/>
+                <div class="submit">
+                        <span class="notice">
+                            <a href="http://www.17sucai.com/preview/66735/2018-04-23/%E6%9E%81%E5%AE%A2%E5%95%86%E5%9F%8E/demo.html#">忘记密码</a>
+                        </span>
+                    <button class="s_hover" data-form="submit">登录</button>
+                </div>
+            </form>s
+            <div class="other_login">
+                <div class="log">
+                    <span>社交账号登录</span>
+                </div>
+                <div class="icon">
+                    <ul>
+                        <li data-log="icon" class="i_hover">
+                            <img data-icon="wx" src="/wx.png" alt="">
+                            <span class="prompt">微信登录</span>
+                        </li>
+                        <li data-log="icon" class="i_hover">
+                            <img data-icon="qq" src="/qq.png" alt="">
+                            <span class="prompt">QQ登录</span>
+                        </li>
+                        <li data-log="icon" class="i_hover">
+                            <img data-icon="wb" src="/wb.png" alt="">
+                            <span class="prompt">微博登录</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="free-regist">
-            <span><a href="/user/showRegister" clstag="passport|keycount|login|08">免费注册&gt;&gt;</a></span>
-        </div>
     </div>
-</form>
-<script type="text/javascript">
-	var redirectUrl = "${redirect}";
-	var LOGIN = {
-			checkInput:function() {
-				if ($("#loginname").val() == "") {
-					alert("用户名不能为空");
-					$("#loginname").focus();
-					return false;
-				}
-				if ($("#nloginpwd").val() == "") {
-					alert("密码不能为空");
-					$("#nloginpwd").focus();
-					return false;
-				}
-				return true;
-			},
-			doLogin:function() {
-				$.post("/user/login", $("#formlogin").serialize(),function(data){
-					if (data.status == 200) {
-						alert("登录成功！");
-						if (redirectUrl == "") {
-							location.href = "http://localhost:8082";
-						} else {
-							location.href = redirectUrl;
-						}
-					} else {
-						alert("登录失败，原因是：" + data.msg);
-						$("#loginname").select();
-					}
-				});
-			},
-			login:function() {
-				if (this.checkInput()) {
-					this.doLogin();
-				}
-			}
-		
-	};
-	$(function(){
-		$("#loginsubmit").click(function(){
-			LOGIN.login();
-		});
-	});
-</script>
+    <div id="footer">
+    </div>
+</div>
+
+
 </body>
 </html>
